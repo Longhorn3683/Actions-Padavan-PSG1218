@@ -1,4 +1,4 @@
-name: Build Padavan
+name: Build Padavan for PSG1218
 
 on: 
   release:
@@ -6,12 +6,10 @@ on:
   push:
     tags:
     - 'v*'
-  #  branches: 
-  #    - master
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: [started]
+    branches: 
+      - master
+  schedule:
+    - cron: 0 0 * * 5
 
 jobs:
   build:
@@ -37,7 +35,7 @@ jobs:
         sudo mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P_nano-5.0
+        TNAME: PSG1218_nano
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
