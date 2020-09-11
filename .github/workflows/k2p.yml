@@ -1,4 +1,4 @@
-name: Build Padavan for K2P
+name: Build Padavan for Phicomm K2P
 
 on: 
   release:
@@ -6,8 +6,8 @@ on:
   push:
     tags:
     - 'v*'
-    branches: 
-      - master
+  #  branches: 
+  #    - master
   schedule:
     - cron: 0 0 * * 5
 
